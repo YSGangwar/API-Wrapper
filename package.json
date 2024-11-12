@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "Its an API wrapper for Easy Usage and handling of Api Calls",
   "main": "index.js",
- 
   "scripts": {
     "test": "npm run test"
   },
