@@ -1,2 +1,2 @@
-import { apiClient } from "./apiclient";    
-export default apiClient
+const apiClient = require("./apiclient");
+module.exports = apiClient;

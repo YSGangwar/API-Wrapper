@@ -1,5 +1,4 @@
-import  createAxiosInstance  from "./AxiosInstance";
-
+const  createAxiosInstance  = require("./AxiosInstance")
 async function getCacheData (cacheName,endpoint){
     
     const cache = await caches.open(cacheName);
@@ -21,7 +20,7 @@ async function putCacheData(cacheName , endpoint , data) {
 }
 
 
-export async function apiClient({ BASE_URL , methodType , endpoint , payload}){
+module.exports = async function apiClient({ BASE_URL , methodType , endpoint , payload,cacheName = 'api-cache', useCache = true}){
     const AxiosInstance = createAxiosInstance(BASE_URL)
     try {
 
