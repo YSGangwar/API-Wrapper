@@ -21,7 +21,6 @@ async function putCacheData(cacheName , endpoint , data) {
 
 
 module.exports = async function apiClient({ BASE_URL , methodType , endpoint , payload,cacheName = 'api-cache', useCache = true}){
-    const AxiosInstance = createAxiosInstance(BASE_URL)
     try {
 
         if (useCache) {
