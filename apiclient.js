@@ -1,3 +1,4 @@
+const { default: axios } = require("axios");
 const  createAxiosInstance  = require("./AxiosInstance")
 async function getCacheData (cacheName,endpoint){
     
@@ -36,10 +37,10 @@ module.exports = async function apiClient({ BASE_URL , methodType , endpoint , p
         let response;
         switch (methodType) {
           case "POST":
-            response = await AxiosInstance.post(BASE_URL,`${endpoint}`, payload);
+            response = await axios.post(BASE_URL,`${endpoint}`, payload);
             break;
           case "GET":
-            response = await AxiosInstance.get(BASE_URL,`${endpoint}`);
+            response = await axios.get(BASE_URL,`${endpoint}`);
             break;
           case "PUT":
             response = await AxiosInstance.put(BASE_URL,`${endpoint}`, payload);
