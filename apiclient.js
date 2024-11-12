@@ -1,5 +1,4 @@
 const { default: axios } = require("axios");
-const  createAxiosInstance  = require("./AxiosInstance")
 async function getCacheData (cacheName,endpoint){
     
     const cache = await caches.open(cacheName);
@@ -43,7 +42,7 @@ module.exports = async function apiClient({ BASE_URL , methodType , endpoint , p
             response = await axios.get(BASE_URL,`${endpoint}`);
             break;
           case "PUT":
-            response = await AxiosInstance.put(BASE_URL,`${endpoint}`, payload);
+            response = await axios.put(BASE_URL,`${endpoint}`, payload);
             break;
           default:
             throw new Error(`Unsupported method type: ${methodType}`);
